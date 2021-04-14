@@ -3,7 +3,9 @@ html {
   scroll-behavior: smooth;
 }
 
-*, * ::before, *::after {
+*,
+* ::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -22,26 +24,23 @@ img {
   height: auto;
 }
 
-@media screen and (min-width: 768px) {
-  .aboutItem figure {
-    max-width: 50%;
-  }
-  .aboutItem .aboutItem__txt {
-    max-width: 50%;
-  }
-}
 header {
-  background-color: cadetblue;
+  background-color: #eef1f1;
+  height: 70vh;
 }
 
 #mainVsiual {
-  width: 100%;
-  height: 50vh;
+  width: 300px;
+  height: 300px;
+  min-height: 200px;
   background-image: url(./img/pexels-tim-douglas-6205494.jpg);
   background-position: center center;
   background-size: cover;
   border-radius: 100%;
   position: relative;
+  max-width: 500px;
+  max-height: 500px;
+  margin: 70px auto;
 }
 #mainVsiual ::before {
   content: "健康をあなたに";
@@ -59,12 +58,18 @@ header {
 
 #about {
   margin-top: 100px;
-  background-color: #b0e9e9;
+  background-color: #e6eaea;
+}
+#about .aboutHeading {
+  text-align: center;
 }
 #about h2 {
-  font-size: 24px;
-  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 32px;
   margin-bottom: 70px;
+  padding-top: 70px;
+  display: inline-block;
+  background: linear-gradient(transparent 60%, white);
 }
 
 .aboutItem {
@@ -76,10 +81,9 @@ header {
 }
 .aboutItem figure {
   margin: 0 auto;
-  box-shadow: inset 0 10px 10px 0 rgba(146, 86, 86, 0.5);
 }
 .aboutItem .aboutItem__txt {
-  background-color: darkgray;
+  background-color: #d2d0d0;
   border-radius: 10px;
 }
 .aboutItem .aboutItem__ttl {
@@ -90,5 +94,120 @@ header {
 }
 .aboutItem .aboutItem__desc {
   font-size: 18px;
-  padding-bottom: 40px;
+  padding: 15px 20px 40px;
+  line-height: 32px;
+}
+
+#cta {
+  background-color: #f3f5ef;
+  width: calc(100%-10%);
+  max-width: 1300x;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.ctaHeading {
+  padding: 70px 0 50px;
+  text-align: center;
+}
+.ctaHeading h2 {
+  font-size: 32px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.ctaBody {
+  text-align: center;
+}
+.ctaBody h3 {
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline;
+  background: linear-gradient(transparent 60%, #93a059);
+}
+
+.ctaItem {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 70px auto 40px;
+  text-align: center;
+  position: relative;
+  padding: 50px 0;
+}
+.ctaItem .ctaItem__ttl {
+  margin-bottom: 30px;
+}
+.ctaItem .ctaItem__ttl a {
+  height: 30px;
+  line-height: 30px;
+  border: solid burlywood;
+  font-size: 20px;
+  padding: 2% 5%;
+}
+.ctaItem .ctaItem__img {
+  margin: 0 auto;
+  width: 70%;
+}
+.ctaItem .ctaItem__img img {
+  border-radius: 50%;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+.ctaItem p {
+  font-size: 18px;
+  color: whitesmoke;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 1px 2px 0px #656464f5;
+}
+.ctaItem::after {
+  content: "";
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 30px solid black;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 769px) {
+  .aboutItem {
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-bottom: 40px;
+  }
+  .aboutItem:nth-of-type(2n) {
+    flex-direction: row-reverse;
+  }
+  .aboutItem figure {
+    max-width: 45%;
+    box-shadow: 15px 15px black;
+  }
+  .aboutItem .aboutItem__txt {
+    max-width: 45%;
+    line-height: 34px;
+  }
+
+  .ctaItem__wrap {
+    display: flex;
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .ctaItem .ctaItem__ttl {
+    width: 25%;
+  }
+  .ctaItem .ctaItem__img {
+    width: 25%;
+  }
+  .ctaItem::after {
+    transform: rotate(271deg);
+  }
 }/*# sourceMappingURL=main.css.map */
